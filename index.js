@@ -12,12 +12,7 @@ const connect = mysql.createConnection({
   password: process.env.NODE_DB_PASS,
   database: process.env.NODE_DB_DB
 });
-// const connect = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: '123',
-//   databse: process.env.NODE_DB_DB
-// });
+
 connect.connect();
 
 
@@ -31,7 +26,6 @@ app.get('/users', (req, res) => {
   `, (er, result, fields) => {
     console.log(`er ${er}, res ${result}, fields ${fields}`);
     console.log('connected by id: ', connect.threadId);
-    // console.log(result);
     res.send(result)
   });
 });
