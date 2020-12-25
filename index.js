@@ -33,7 +33,5 @@ app.get('/users', (req, res) => {
     console.log('connected by id: ', connect.threadId);
     // console.log(result);
     res.send(result)
-
   });
-
 });
